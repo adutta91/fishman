@@ -1,25 +1,26 @@
 import { render } from 'react-dom';
 import React, { Component } from 'react';
+import { Provider } from 'react-redux'
 import injectTapEventPlugin from 'react-tap-event-plugin';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import Store from './app/store';
 
-import Landing from './app/components/landing.jsx';
+import { Router, Route, hashHistory } from 'react-router';
+
+import Landing from './components/landing';
+import Main from './components/main';
 
 injectTapEventPlugin();
 
-class App extends Component {
-  render() {
-    return (
-      <MuiThemeProvider>
-        <div id="app-main">
-          <Landing />
-        </div>
-      </MuiThemeProvider>
-    )
-  }
-}
+const routes = (
+  <Provider store={Store}>
+    <Router history={hashHistory}>
+      <Route path='/' component={Landing} />
+      <Route path='/main' component={Main} />
+    </Router>
+  </Provider>
+)
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.querySelector('#root');
-  render(<App />, root);
+  render(routes, root);
 });

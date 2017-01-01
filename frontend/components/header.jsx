@@ -23,9 +23,13 @@ export default class Header extends Component {
   render() {
     return (
       <div style={this.state.style} className='header'>
-        <div>
+        <div className="flex">
           <Icons />
-          <input type="text" placeholder="enter email" value={this.state.email} onChange={this.emailChange.bind(this)} />
+          <input type="text"
+            className="input hvr-underline-from-left"
+            placeholder="enter email"
+            value={this.state.email}
+            onChange={this.emailChange.bind(this)} />
         </div>
         <div className="title">danny fishman</div>
       </div>
