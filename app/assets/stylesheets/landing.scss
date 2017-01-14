@@ -52,13 +52,15 @@
   .icon {
     margin: 10px;
     color: gray;
+    transform: scale(1.25);
+
     transition: all .25s ease-in-out;
   }
 
   .icon:hover {
     cursor: pointer;
     color: black;
-    transform: scale(1.25);
+    transform: scale(1.5);
   }
 
   .title {
