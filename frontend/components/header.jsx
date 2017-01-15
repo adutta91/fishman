@@ -23,12 +23,12 @@ export default class Header extends Component {
   checkScroll(e) {
     if ($(document).scrollTop() > 64) {
       this.setState({ style: {
-        backgroundColor: 'lightblue',
-        boxShadow: '1px 1px 1px 1px lightgray',
+        backgroundColor: '#EEE',
+        boxShadow: '1px 1px 1px 1px gray',
         color: 'gray'
       } });
     } else {
-      this.setState({ style: {} });
+      this.setState({ style: { boxShadow: '1px 1px 1px 1px white' } });
     }
   }
 
