@@ -4,7 +4,7 @@ import { Provider } from 'react-redux'
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import Store from './app/store';
 
-import { Router, Route, hashHistory } from 'react-router';
+import { Router, Route, browserHistory } from 'react-router';
 
 import Landing from './components/landing';
 import Main from './components/main';
@@ -13,7 +13,7 @@ injectTapEventPlugin();
 
 const routes = (
   <Provider store={Store}>
-    <Router history={hashHistory}>
+    <Router history={browserHistory}>
       <Route path='/' component={Landing} />
       <Route path='/main' component={Main} />
     </Router>
@@ -21,6 +21,6 @@ const routes = (
 )
 
 document.addEventListener('DOMContentLoaded', () => {
-  const root = document.querySelector('#root');
+  const root = document.querySelector('#fishman-app-main');
   render(routes, root);
 });

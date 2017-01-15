@@ -14,12 +14,10 @@ export default class Landing extends Component {
 
   componentDidMount() {
     this.buttonTimer = window.setTimeout(this.showButton.bind(this), 1500);
-    // this.titleTimer = window.setTimeout(this.showTitle.bind(this), 1500);
   }
 
   componentWillUnmount() {
     window.clearTimeout(this.buttonTimer);
-    // window.clearTimeout(this.titleTimer);
   }
 
   render() {
@@ -35,7 +33,7 @@ export default class Landing extends Component {
             </h3>
           </div>
           <div className="button-wrapper flex">
-            <FlatButton onClick={this.goTo.bind(this, "/#/main")}
+            <FlatButton onClick={this.goTo.bind(this, "/main")}
               style={this.buttonStyle()}
               label="Enter"/>
           </div>
@@ -66,7 +64,7 @@ export default class Landing extends Component {
   }
 
   goTo(link) {
-    location.href = link;
+    window.location.href = link;
   }
 
   titleStyle() {

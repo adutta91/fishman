@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import AppBar from 'material-ui/AppBar';
-import Icons from './icons';
 import TextField from 'material-ui/TextField';
 
 export default class Header extends Component {
@@ -23,7 +22,11 @@ export default class Header extends Component {
 
   checkScroll(e) {
     if ($(document).scrollTop() > 64) {
-      this.setState({ style: {backgroundColor: 'lightblue', boxShadow: '1px 1px 1px 1px lightgray'} });
+      this.setState({ style: {
+        backgroundColor: 'lightblue',
+        boxShadow: '1px 1px 1px 1px lightgray',
+        color: 'gray'
+      } });
     } else {
       this.setState({ style: {} });
     }
@@ -43,7 +46,6 @@ export default class Header extends Component {
     return (
       <div style={this.state.style} className='header'>
         <div className="flex">
-          <Icons />
           <TextField
             hintText="eg. danny@fishman.poo"
             floatingLabelText="email"

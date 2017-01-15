@@ -81,14 +81,14 @@
 	  { store: _store2.default },
 	  _react2.default.createElement(
 	    _reactRouter.Router,
-	    { history: _reactRouter.hashHistory },
+	    { history: _reactRouter.browserHistory },
 	    _react2.default.createElement(_reactRouter.Route, { path: '/', component: _landing2.default }),
 	    _react2.default.createElement(_reactRouter.Route, { path: '/main', component: _main2.default })
 	  )
 	);
 	
 	document.addEventListener('DOMContentLoaded', function () {
-	  var root = document.querySelector('#root');
+	  var root = document.querySelector('#fishman-app-main');
 	  (0, _reactDom.render)(routes, root);
 	});
 
@@ -29032,13 +29032,11 @@
 	    key: 'componentDidMount',
 	    value: function componentDidMount() {
 	      this.buttonTimer = window.setTimeout(this.showButton.bind(this), 1500);
-	      // this.titleTimer = window.setTimeout(this.showTitle.bind(this), 1500);
 	    }
 	  }, {
 	    key: 'componentWillUnmount',
 	    value: function componentWillUnmount() {
 	      window.clearTimeout(this.buttonTimer);
-	      // window.clearTimeout(this.titleTimer);
 	    }
 	  }, {
 	    key: 'render',
@@ -29066,7 +29064,7 @@
 	          _react2.default.createElement(
 	            'div',
 	            { className: 'button-wrapper flex' },
-	            _react2.default.createElement(_FlatButton2.default, { onClick: this.goTo.bind(this, "/#/main"),
+	            _react2.default.createElement(_FlatButton2.default, { onClick: this.goTo.bind(this, "/main"),
 	              style: this.buttonStyle(),
 	              label: 'Enter' })
 	          )
@@ -29100,7 +29098,7 @@
 	  }, {
 	    key: 'goTo',
 	    value: function goTo(link) {
-	      location.href = link;
+	      window.location.href = link;
 	    }
 	  }, {
 	    key: 'titleStyle',
@@ -40560,7 +40558,11 @@
 	
 	var _header2 = _interopRequireDefault(_header);
 	
-	var _bio = __webpack_require__(651);
+	var _footer = __webpack_require__(494);
+	
+	var _footer2 = _interopRequireDefault(_footer);
+	
+	var _bio = __webpack_require__(496);
 	
 	var _bio2 = _interopRequireDefault(_bio);
 	
@@ -40591,7 +40593,8 @@
 	          'div',
 	          { id: 'main' },
 	          _react2.default.createElement(_header2.default, null),
-	          _react2.default.createElement(_bio2.default, null)
+	          _react2.default.createElement(_bio2.default, null),
+	          _react2.default.createElement(_footer2.default, null)
 	        )
 	      );
 	    }
@@ -40622,11 +40625,7 @@
 	
 	var _AppBar2 = _interopRequireDefault(_AppBar);
 	
-	var _icons = __webpack_require__(483);
-	
-	var _icons2 = _interopRequireDefault(_icons);
-	
-	var _TextField = __webpack_require__(487);
+	var _TextField = __webpack_require__(483);
 	
 	var _TextField2 = _interopRequireDefault(_TextField);
 	
@@ -40667,7 +40666,11 @@
 	    key: 'checkScroll',
 	    value: function checkScroll(e) {
 	      if ($(document).scrollTop() > 64) {
-	        this.setState({ style: { backgroundColor: 'lightblue', boxShadow: '1px 1px 1px 1px lightgray' } });
+	        this.setState({ style: {
+	            backgroundColor: 'lightblue',
+	            boxShadow: '1px 1px 1px 1px lightgray',
+	            color: 'gray'
+	          } });
 	      } else {
 	        this.setState({ style: {} });
 	      }
@@ -40693,7 +40696,6 @@
 	        _react2.default.createElement(
 	          'div',
 	          { className: 'flex' },
-	          _react2.default.createElement(_icons2.default, null),
 	          _react2.default.createElement(_TextField2.default, {
 	            hintText: 'eg. danny@fishman.poo',
 	            floatingLabelText: 'email',
@@ -42644,70 +42646,9 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
-	var _react = __webpack_require__(177);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	
-	var Icons = function (_Component) {
-	  _inherits(Icons, _Component);
-	
-	  function Icons() {
-	    _classCallCheck(this, Icons);
-	
-	    return _possibleConstructorReturn(this, (Icons.__proto__ || Object.getPrototypeOf(Icons)).apply(this, arguments));
-	  }
-	
-	  _createClass(Icons, [{
-	    key: 'render',
-	    value: function render() {
-	      return _react2.default.createElement(
-	        'div',
-	        { className: 'flex a-end row', style: { margin: '0 30px 0 10px' } },
-	        _react2.default.createElement('i', { onClick: this.goTo.bind(this, "https://www.facebook.com/dannyfishmanmusic/"), className: 'icon fa fa-facebook-official' }),
-	        _react2.default.createElement('i', { onClick: this.goTo.bind(this, "https://www.youtube.com/channel/UCKEqnVJK5vtEBSXRQu1gzig"), className: 'icon fa fa-youtube' }),
-	        _react2.default.createElement('i', { onClick: this.goTo.bind(this, "https://twitter.com/dannythefishman"), className: 'icon fa fa-twitter' }),
-	        _react2.default.createElement('i', { onClick: this.goTo.bind(this, "https://www.instagram.com/dannyfishmanmusic/"), className: 'icon fa fa-instagram' }),
-	        _react2.default.createElement('i', { onClick: this.goTo.bind(this, "https://soundcloud.com/danny-fishman"), className: 'icon fa fa-soundcloud' })
-	      );
-	    }
-	  }, {
-	    key: 'goTo',
-	    value: function goTo(link) {
-	      window.open(link, "_blank");
-	    }
-	  }]);
-	
-	  return Icons;
-	}(_react.Component);
-	
-	exports.default = Icons;
-
-/***/ },
-/* 484 */,
-/* 485 */,
-/* 486 */,
-/* 487 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
 	exports.default = undefined;
 	
-	var _TextField = __webpack_require__(488);
+	var _TextField = __webpack_require__(484);
 	
 	var _TextField2 = _interopRequireDefault(_TextField);
 	
@@ -42716,7 +42657,7 @@
 	exports.default = _TextField2.default;
 
 /***/ },
-/* 488 */
+/* 484 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -42773,19 +42714,19 @@
 	
 	var _transitions2 = _interopRequireDefault(_transitions);
 	
-	var _EnhancedTextarea = __webpack_require__(489);
+	var _EnhancedTextarea = __webpack_require__(485);
 	
 	var _EnhancedTextarea2 = _interopRequireDefault(_EnhancedTextarea);
 	
-	var _TextFieldHint = __webpack_require__(495);
+	var _TextFieldHint = __webpack_require__(491);
 	
 	var _TextFieldHint2 = _interopRequireDefault(_TextFieldHint);
 	
-	var _TextFieldLabel = __webpack_require__(496);
+	var _TextFieldLabel = __webpack_require__(492);
 	
 	var _TextFieldLabel2 = _interopRequireDefault(_TextFieldLabel);
 	
-	var _TextFieldUnderline = __webpack_require__(497);
+	var _TextFieldUnderline = __webpack_require__(493);
 	
 	var _TextFieldUnderline2 = _interopRequireDefault(_TextFieldUnderline);
 	
@@ -43297,7 +43238,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 489 */
+/* 485 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -43342,7 +43283,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _reactEventListener = __webpack_require__(490);
+	var _reactEventListener = __webpack_require__(486);
 	
 	var _reactEventListener2 = _interopRequireDefault(_reactEventListener);
 	
@@ -43543,7 +43484,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 490 */
+/* 486 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -43586,7 +43527,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _reactAddonsShallowCompare = __webpack_require__(491);
+	var _reactAddonsShallowCompare = __webpack_require__(487);
 	
 	var _reactAddonsShallowCompare2 = _interopRequireDefault(_reactAddonsShallowCompare);
 	
@@ -43594,7 +43535,7 @@
 	
 	var _warning2 = _interopRequireDefault(_warning);
 	
-	var _supports = __webpack_require__(493);
+	var _supports = __webpack_require__(489);
 	
 	var supports = _interopRequireWildcard(_supports);
 	
@@ -43756,13 +43697,13 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 491 */
+/* 487 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(492);
+	module.exports = __webpack_require__(488);
 
 /***/ },
-/* 492 */
+/* 488 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -43791,7 +43732,7 @@
 	module.exports = shallowCompare;
 
 /***/ },
-/* 493 */
+/* 489 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -43801,7 +43742,7 @@
 	});
 	exports.passiveOption = exports.detachEvent = exports.attachEvent = exports.removeEventListener = exports.addEventListener = exports.canUseDOM = undefined;
 	
-	var _defineProperty = __webpack_require__(494);
+	var _defineProperty = __webpack_require__(490);
 	
 	var _defineProperty2 = _interopRequireDefault(_defineProperty);
 	
@@ -43844,7 +43785,7 @@
 	}();
 
 /***/ },
-/* 494 */
+/* 490 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -43868,7 +43809,7 @@
 	}
 
 /***/ },
-/* 495 */
+/* 491 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -43950,7 +43891,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 496 */
+/* 492 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -44069,7 +44010,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 497 */
+/* 493 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -44207,160 +44148,119 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 498 */,
-/* 499 */,
-/* 500 */,
-/* 501 */,
-/* 502 */,
-/* 503 */,
-/* 504 */,
-/* 505 */,
-/* 506 */,
-/* 507 */,
-/* 508 */,
-/* 509 */,
-/* 510 */,
-/* 511 */,
-/* 512 */,
-/* 513 */,
-/* 514 */,
-/* 515 */,
-/* 516 */,
-/* 517 */,
-/* 518 */,
-/* 519 */,
-/* 520 */,
-/* 521 */,
-/* 522 */,
-/* 523 */,
-/* 524 */,
-/* 525 */,
-/* 526 */,
-/* 527 */,
-/* 528 */,
-/* 529 */,
-/* 530 */,
-/* 531 */,
-/* 532 */,
-/* 533 */,
-/* 534 */,
-/* 535 */,
-/* 536 */,
-/* 537 */,
-/* 538 */,
-/* 539 */,
-/* 540 */,
-/* 541 */,
-/* 542 */,
-/* 543 */,
-/* 544 */,
-/* 545 */,
-/* 546 */,
-/* 547 */,
-/* 548 */,
-/* 549 */,
-/* 550 */,
-/* 551 */,
-/* 552 */,
-/* 553 */,
-/* 554 */,
-/* 555 */,
-/* 556 */,
-/* 557 */,
-/* 558 */,
-/* 559 */,
-/* 560 */,
-/* 561 */,
-/* 562 */,
-/* 563 */,
-/* 564 */,
-/* 565 */,
-/* 566 */,
-/* 567 */,
-/* 568 */,
-/* 569 */,
-/* 570 */,
-/* 571 */,
-/* 572 */,
-/* 573 */,
-/* 574 */,
-/* 575 */,
-/* 576 */,
-/* 577 */,
-/* 578 */,
-/* 579 */,
-/* 580 */,
-/* 581 */,
-/* 582 */,
-/* 583 */,
-/* 584 */,
-/* 585 */,
-/* 586 */,
-/* 587 */,
-/* 588 */,
-/* 589 */,
-/* 590 */,
-/* 591 */,
-/* 592 */,
-/* 593 */,
-/* 594 */,
-/* 595 */,
-/* 596 */,
-/* 597 */,
-/* 598 */,
-/* 599 */,
-/* 600 */,
-/* 601 */,
-/* 602 */,
-/* 603 */,
-/* 604 */,
-/* 605 */,
-/* 606 */,
-/* 607 */,
-/* 608 */,
-/* 609 */,
-/* 610 */,
-/* 611 */,
-/* 612 */,
-/* 613 */,
-/* 614 */,
-/* 615 */,
-/* 616 */,
-/* 617 */,
-/* 618 */,
-/* 619 */,
-/* 620 */,
-/* 621 */,
-/* 622 */,
-/* 623 */,
-/* 624 */,
-/* 625 */,
-/* 626 */,
-/* 627 */,
-/* 628 */,
-/* 629 */,
-/* 630 */,
-/* 631 */,
-/* 632 */,
-/* 633 */,
-/* 634 */,
-/* 635 */,
-/* 636 */,
-/* 637 */,
-/* 638 */,
-/* 639 */,
-/* 640 */,
-/* 641 */,
-/* 642 */,
-/* 643 */,
-/* 644 */,
-/* 645 */,
-/* 646 */,
-/* 647 */,
-/* 648 */,
-/* 649 */,
-/* 650 */,
-/* 651 */
+/* 494 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(177);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _icons = __webpack_require__(495);
+	
+	var _icons2 = _interopRequireDefault(_icons);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var Footer = function (_Component) {
+	  _inherits(Footer, _Component);
+	
+	  function Footer() {
+	    _classCallCheck(this, Footer);
+	
+	    return _possibleConstructorReturn(this, (Footer.__proto__ || Object.getPrototypeOf(Footer)).apply(this, arguments));
+	  }
+	
+	  _createClass(Footer, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
+	        { id: 'footer', className: 'flex j-center' },
+	        _react2.default.createElement(_icons2.default, null)
+	      );
+	    }
+	  }]);
+	
+	  return Footer;
+	}(_react.Component);
+	
+	exports.default = Footer;
+	;
+
+/***/ },
+/* 495 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(177);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var Icons = function (_Component) {
+	  _inherits(Icons, _Component);
+	
+	  function Icons() {
+	    _classCallCheck(this, Icons);
+	
+	    return _possibleConstructorReturn(this, (Icons.__proto__ || Object.getPrototypeOf(Icons)).apply(this, arguments));
+	  }
+	
+	  _createClass(Icons, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
+	        { className: 'flex a-end row', style: { margin: '0 30px 0 10px' } },
+	        _react2.default.createElement('i', { onClick: this.goTo.bind(this, "https://www.facebook.com/dannyfishmanmusic/"), className: 'icon fa fa-facebook-official' }),
+	        _react2.default.createElement('i', { onClick: this.goTo.bind(this, "https://www.youtube.com/channel/UCKEqnVJK5vtEBSXRQu1gzig"), className: 'icon fa fa-youtube' }),
+	        _react2.default.createElement('i', { onClick: this.goTo.bind(this, "https://twitter.com/dannythefishman"), className: 'icon fa fa-twitter' }),
+	        _react2.default.createElement('i', { onClick: this.goTo.bind(this, "https://www.instagram.com/dannyfishmanmusic/"), className: 'icon fa fa-instagram' }),
+	        _react2.default.createElement('i', { onClick: this.goTo.bind(this, "https://soundcloud.com/danny-fishman"), className: 'icon fa fa-soundcloud' })
+	      );
+	    }
+	  }, {
+	    key: 'goTo',
+	    value: function goTo(link) {
+	      window.open(link, "_blank");
+	    }
+	  }]);
+	
+	  return Icons;
+	}(_react.Component);
+	
+	exports.default = Icons;
+
+/***/ },
+/* 496 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
