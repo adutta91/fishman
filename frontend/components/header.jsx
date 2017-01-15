@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import AppBar from 'material-ui/AppBar';
 import Icons from './icons';
+import TextField from 'material-ui/TextField';
 
 export default class Header extends Component {
 
@@ -25,9 +26,9 @@ export default class Header extends Component {
       <div style={this.state.style} className='header'>
         <div className="flex">
           <Icons />
-          <input type="text"
-            className="input hvr-underline-from-left"
-            placeholder="enter email"
+          <TextField
+            hintText="eg. danny@fishman.poo"
+            floatingLabelText="email"
             value={this.state.email}
             onChange={this.emailChange.bind(this)} />
         </div>
