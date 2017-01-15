@@ -21,6 +21,24 @@ export default class Header extends Component {
     document.removeEventListener("scroll");
   }
 
+  checkScroll(e) {
+    if ($(document).scrollTop() > 64) {
+      this.setState({ style: {backgroundColor: 'lightblue', boxShadow: '1px 1px 1px 1px lightgray'} });
+    } else {
+      this.setState({ style: {} });
+    }
+  }
+
+  keyPress(e) {
+    if (e.key == 'Enter') {
+      alert(this.state.email);
+    }
+  }
+
+  emailChange(e) {
+    this.setState( {email: e.target.value} );
+  }
+
   render() {
     return (
       <div style={this.state.style} className='header'>
@@ -30,22 +48,11 @@ export default class Header extends Component {
             hintText="eg. danny@fishman.poo"
             floatingLabelText="email"
             value={this.state.email}
-            onChange={this.emailChange.bind(this)} />
+            onChange={this.emailChange.bind(this)}
+            onKeyPress={this.keyPress.bind(this)}/>
         </div>
         <div className="title">danny fishman</div>
       </div>
     )
-  }
-
-  checkScroll(e) {
-    if ($(document).scrollTop() > 64) {
-      this.setState({ style: {backgroundColor: 'rgba(0,0,0,0.05)', boxShadow: '1px 1px 1px 1px lightgray'} });
-    } else {
-      this.setState({ style: {} });
-    }
-  }
-
-  emailChange(e) {
-    this.setState( {email: e.target.value} );
   }
 }

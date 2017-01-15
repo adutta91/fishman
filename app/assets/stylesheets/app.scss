@@ -72,3 +72,17 @@
     float: right;
   }
 }
+
+
+#bio {
+  margin-top: 25vh;
+  margin-right: 10vw;
+  margin-left: 10vw;
+
+  .text {
+    text-align: justify;
+    padding: 0 15px 15px 15px;
+    margin: 0;
+    color: gray;
+  }
+}

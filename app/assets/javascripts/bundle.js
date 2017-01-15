@@ -40560,7 +40560,7 @@
 	
 	var _header2 = _interopRequireDefault(_header);
 	
-	var _bio = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./bio\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+	var _bio = __webpack_require__(651);
 	
 	var _bio2 = _interopRequireDefault(_bio);
 	
@@ -40664,6 +40664,27 @@
 	      document.removeEventListener("scroll");
 	    }
 	  }, {
+	    key: 'checkScroll',
+	    value: function checkScroll(e) {
+	      if ($(document).scrollTop() > 64) {
+	        this.setState({ style: { backgroundColor: 'lightblue', boxShadow: '1px 1px 1px 1px lightgray' } });
+	      } else {
+	        this.setState({ style: {} });
+	      }
+	    }
+	  }, {
+	    key: 'keyPress',
+	    value: function keyPress(e) {
+	      if (e.key == 'Enter') {
+	        alert(this.state.email);
+	      }
+	    }
+	  }, {
+	    key: 'emailChange',
+	    value: function emailChange(e) {
+	      this.setState({ email: e.target.value });
+	    }
+	  }, {
 	    key: 'render',
 	    value: function render() {
 	      return _react2.default.createElement(
@@ -40677,7 +40698,8 @@
 	            hintText: 'eg. danny@fishman.poo',
 	            floatingLabelText: 'email',
 	            value: this.state.email,
-	            onChange: this.emailChange.bind(this) })
+	            onChange: this.emailChange.bind(this),
+	            onKeyPress: this.keyPress.bind(this) })
 	        ),
 	        _react2.default.createElement(
 	          'div',
@@ -40685,20 +40707,6 @@
 	          'danny fishman'
 	        )
 	      );
-	    }
-	  }, {
-	    key: 'checkScroll',
-	    value: function checkScroll(e) {
-	      if ($(document).scrollTop() > 64) {
-	        this.setState({ style: { backgroundColor: 'rgba(0,0,0,0.05)', boxShadow: '1px 1px 1px 1px lightgray' } });
-	      } else {
-	        this.setState({ style: {} });
-	      }
-	    }
-	  }, {
-	    key: 'emailChange',
-	    value: function emailChange(e) {
-	      this.setState({ email: e.target.value });
 	    }
 	  }]);
 	
@@ -44197,6 +44205,249 @@
 	
 	exports.default = TextFieldUnderline;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+
+/***/ },
+/* 498 */,
+/* 499 */,
+/* 500 */,
+/* 501 */,
+/* 502 */,
+/* 503 */,
+/* 504 */,
+/* 505 */,
+/* 506 */,
+/* 507 */,
+/* 508 */,
+/* 509 */,
+/* 510 */,
+/* 511 */,
+/* 512 */,
+/* 513 */,
+/* 514 */,
+/* 515 */,
+/* 516 */,
+/* 517 */,
+/* 518 */,
+/* 519 */,
+/* 520 */,
+/* 521 */,
+/* 522 */,
+/* 523 */,
+/* 524 */,
+/* 525 */,
+/* 526 */,
+/* 527 */,
+/* 528 */,
+/* 529 */,
+/* 530 */,
+/* 531 */,
+/* 532 */,
+/* 533 */,
+/* 534 */,
+/* 535 */,
+/* 536 */,
+/* 537 */,
+/* 538 */,
+/* 539 */,
+/* 540 */,
+/* 541 */,
+/* 542 */,
+/* 543 */,
+/* 544 */,
+/* 545 */,
+/* 546 */,
+/* 547 */,
+/* 548 */,
+/* 549 */,
+/* 550 */,
+/* 551 */,
+/* 552 */,
+/* 553 */,
+/* 554 */,
+/* 555 */,
+/* 556 */,
+/* 557 */,
+/* 558 */,
+/* 559 */,
+/* 560 */,
+/* 561 */,
+/* 562 */,
+/* 563 */,
+/* 564 */,
+/* 565 */,
+/* 566 */,
+/* 567 */,
+/* 568 */,
+/* 569 */,
+/* 570 */,
+/* 571 */,
+/* 572 */,
+/* 573 */,
+/* 574 */,
+/* 575 */,
+/* 576 */,
+/* 577 */,
+/* 578 */,
+/* 579 */,
+/* 580 */,
+/* 581 */,
+/* 582 */,
+/* 583 */,
+/* 584 */,
+/* 585 */,
+/* 586 */,
+/* 587 */,
+/* 588 */,
+/* 589 */,
+/* 590 */,
+/* 591 */,
+/* 592 */,
+/* 593 */,
+/* 594 */,
+/* 595 */,
+/* 596 */,
+/* 597 */,
+/* 598 */,
+/* 599 */,
+/* 600 */,
+/* 601 */,
+/* 602 */,
+/* 603 */,
+/* 604 */,
+/* 605 */,
+/* 606 */,
+/* 607 */,
+/* 608 */,
+/* 609 */,
+/* 610 */,
+/* 611 */,
+/* 612 */,
+/* 613 */,
+/* 614 */,
+/* 615 */,
+/* 616 */,
+/* 617 */,
+/* 618 */,
+/* 619 */,
+/* 620 */,
+/* 621 */,
+/* 622 */,
+/* 623 */,
+/* 624 */,
+/* 625 */,
+/* 626 */,
+/* 627 */,
+/* 628 */,
+/* 629 */,
+/* 630 */,
+/* 631 */,
+/* 632 */,
+/* 633 */,
+/* 634 */,
+/* 635 */,
+/* 636 */,
+/* 637 */,
+/* 638 */,
+/* 639 */,
+/* 640 */,
+/* 641 */,
+/* 642 */,
+/* 643 */,
+/* 644 */,
+/* 645 */,
+/* 646 */,
+/* 647 */,
+/* 648 */,
+/* 649 */,
+/* 650 */,
+/* 651 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(177);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var Bio = function (_Component) {
+	  _inherits(Bio, _Component);
+	
+	  function Bio() {
+	    _classCallCheck(this, Bio);
+	
+	    return _possibleConstructorReturn(this, (Bio.__proto__ || Object.getPrototypeOf(Bio)).apply(this, arguments));
+	  }
+	
+	  _createClass(Bio, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
+	        { id: 'bio' },
+	        _react2.default.createElement('img', { style: { float: 'right', marginLeft: '25px' }, src: 'http://www.jqueryscript.net/images/Simplest-Responsive-jQuery-Image-Lightbox-Plugin-simple-lightbox.jpg' }),
+	        _react2.default.createElement(
+	          'p',
+	          { className: 'text' },
+	          'I won\'t pretend like anyone else put this bio about me together by writing in the 3rd person, and I don\'t have any press clippings to describe or swoon over my music. But I kind of prefer it that way. This way it\'s my story, and I\'m telling it directly to you.'
+	        ),
+	        _react2.default.createElement(
+	          'p',
+	          { className: 'text' },
+	          'My name is ',
+	          _react2.default.createElement(
+	            'a',
+	            null,
+	            'Danny Fishman'
+	          ),
+	          '. I\'m a New York City based singer- songwriter. I\'ve been playing music my whole life and been writing songs for about half of it now. I love all of it.'
+	        ),
+	        _react2.default.createElement(
+	          'p',
+	          { className: 'text' },
+	          'Over the past seven years, I\'ve written ten songs that I\'m really, really proud of. Each one turned those moments into something I could cherish, instead of regret. They made coals into diamonds.'
+	        ),
+	        _react2.default.createElement(
+	          'p',
+	          { className: 'text' },
+	          'Sharing these songs with other people has made me happy, so I figured I\'d see if I could make a career out of it. I hope you enjoy them.'
+	        ),
+	        _react2.default.createElement(
+	          'p',
+	          { className: 'text' },
+	          'Thanks for stopping by.'
+	        ),
+	        _react2.default.createElement(
+	          'p',
+	          { className: 'text' },
+	          _react2.default.createElement(
+	            'em',
+	            null,
+	            '- Danny'
+	          )
+	        )
+	      );
+	    }
+	  }]);
+	
+	  return Bio;
+	}(_react.Component);
+	
+	exports.default = Bio;
+	;
 
 /***/ }
 /******/ ]);
