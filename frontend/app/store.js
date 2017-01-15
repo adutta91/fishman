@@ -1,17 +1,21 @@
 import { createStore } from 'redux';
 import {
-  CONTENT_LOADED
+  CONTENT_LOADED,
+  TAB_SELECTED
 } from './actions'
 
 
 const initialState = {
-  loaded: false
+  loaded: false,
+  activeTab: 'bio'
 }
 
 const AppReducer = (state = initialState, action) => {
   switch(action.type) {
     case CONTENT_LOADED:
-      return Object.assign({}, state, loaded: true);
+      return Object.assign({}, state, { loaded: true });
+    case TAB_SELECTED:
+      return Object.assign({}, state, { activeTab: action.tab });
     default:
       return state;
   }

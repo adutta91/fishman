@@ -8,6 +8,7 @@ import { Router, Route, browserHistory } from 'react-router';
 
 import Landing from './components/landing';
 import Main from './components/main';
+import AppContainer from './containers/app-container';
 
 injectTapEventPlugin();
 
@@ -15,7 +16,7 @@ const routes = (
   <Provider store={Store}>
     <Router history={browserHistory}>
       <Route path='/' component={Landing} />
-      <Route path='/main' component={Main} />
+      <Route path='/main' component={AppContainer} />
     </Router>
   </Provider>
 )

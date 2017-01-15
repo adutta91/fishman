@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import AppBar from 'material-ui/AppBar';
 import TextField from 'material-ui/TextField';
 
+import Tabs from './tabs';
+
 export default class Header extends Component {
 
   constructor(props) {
@@ -45,13 +47,14 @@ export default class Header extends Component {
   render() {
     return (
       <div style={this.state.style} className='header'>
-        <div className="flex">
+        <div className="left flex">
           <TextField
             hintText="eg. danny@fishman.poo"
             floatingLabelText="email"
             value={this.state.email}
             onChange={this.emailChange.bind(this)}
             onKeyPress={this.keyPress.bind(this)}/>
+            <Tabs />
         </div>
         <div className="title">danny fishman</div>
       </div>
