@@ -14,12 +14,16 @@ export default class TabList extends Component {
     return (
       <div id='tab-list'>
         <Tabs>
-          <Tab style={{width: '100px', color: 'gray' }}
+          <Tab style={{width: '100px', color: 'black', backgroundColor: 'white' }}
             label="bio"
             data-route="/"
             onActive={this.handleActive} />
-          <Tab style={{width: '100px', color: 'gray' }}
-            label="videos"
+          <Tab style={{width: '100px', color: 'black', backgroundColor: 'white' }}
+            label="listen"
+            data-route="/"
+            onActive={this.handleActive} />
+          <Tab style={{width: '100px', color: 'black', backgroundColor: 'white' }}
+            label="contact"
             data-route="/"
             onActive={this.handleActive} />
         </Tabs>

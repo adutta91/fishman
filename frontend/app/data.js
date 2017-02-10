@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Bio from '../components/bio';
-import VideoList from '../components/video-list';
+import SongIndex from '../components/song-index';
 
 
 export const videos = [
@@ -24,7 +24,36 @@ export const videos = [
 ];
 
 
+export const songs = [
+  {
+    title: 'Descent Into Madness',
+    src: 'https://www.youtube.com/embed/Us77l6cr7so',
+    description: ''
+  },
+  {
+    title: 'Descent Into Madness',
+    src: 'https://www.youtube.com/embed/Us77l6cr7so',
+    description: ''
+  },
+  {
+    title: 'Descent Into Madness',
+    src: 'https://www.youtube.com/embed/Us77l6cr7so',
+    description: ''
+  },
+  {
+    title: 'Descent Into Madness',
+    src: 'https://www.youtube.com/embed/Us77l6cr7so',
+    description: ''
+  },
+  {
+    title: 'Descent Into Madness',
+    src: 'https://www.youtube.com/embed/Us77l6cr7so',
+    description: ''
+  }
+];
+
 export const tabs = {
   bio: <Bio />,
-  videos: <VideoList videos={videos} />
+  listen: <SongIndex songs={songs}/>,
+  contact: <SongIndex songs={songs}/>
 };

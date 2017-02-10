@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import AppBar from 'material-ui/AppBar';
 import TextField from 'material-ui/TextField';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import theme from '../app/theme';
 
 import Tabs from './tabs';
 
@@ -46,18 +49,21 @@ export default class Header extends Component {
 
   render() {
     return (
-      <div style={this.state.style} className='header'>
-        <div className="left flex">
+      <MuiThemeProvider muiTheme={getMuiTheme(theme)}>
+        <div style={this.state.style} className='header'>
+          <div className="left flex">
+            <div className="title">Danny Fishman</div>
+            <Tabs />
+          </div>
           <TextField
+            style={{right: '100px'}}
             hintText="eg. danny@fishman.poo"
             floatingLabelText="email"
             value={this.state.email}
             onChange={this.emailChange.bind(this)}
             onKeyPress={this.keyPress.bind(this)}/>
-            <Tabs />
         </div>
-        <div className="title">danny fishman</div>
-      </div>
+      </MuiThemeProvider>
     )
   }
 }

@@ -1,4 +1,8 @@
 
+body {
+
+}
+
 #fishman-app-main {
   #landing {
     #landing-image-wrapper {
@@ -6,7 +10,7 @@
       opacity: .75;
 
       #landing-image {
-        background: url(http://res.cloudinary.com/dzyfczxnr/image/upload/v1482106729/guitar.jpg);
+        background: url(http://res.cloudinary.com/dzyfczxnr/image/upload/v1486001602/IMG_1254_f2zgkq.jpg);
         background-size: 100vw 100vh;
         width: 100vw;
         height: 100vh;
@@ -14,11 +18,10 @@
     }
 
     .button-wrapper {
-      width: 100%;
-      margin: 0 auto;
+      margin-left: 5vw;
       position: fixed;
-      bottom: 25%;
-      color: white;
+      bottom: 5vh;
+      color: black;
       line-height: 30px;
       text-shadow: 2px 2px 10px black;
     }
@@ -38,7 +41,6 @@
     position: fixed;
     width: 100%;
     top: 0;
-    background-color: white;
     transition: all .75s ease-in-out;
 
     .left {
@@ -57,12 +59,13 @@
     }
 
     .title {
-      font-size: 20px;
-      margin: 10px 0;
-      margin-right: 100px;
+      font-family: 'Rock Salt', cursive;
+      font-size: 26px;
+      margin: 20px 0;
       align-self: flex-end;
-      width: max-content;
+      width: 350px;
       float: right;
+      color: black;
     }
   }
 
@@ -75,7 +78,7 @@
 
     .icon {
       margin: 10px;
-      color: lightgray;
+      color: black;
       transform: scale(1.25);
       transition: all .25s ease-in-out;
 
@@ -97,11 +100,13 @@
       text-align: justify;
       padding: 0 15px 15px 15px;
       margin: 0;
-      color: gray;
+      color: black;
     }
   }
 
   #tab-list {
+    height: max-content;
+    margin-top: 20px;
     width: 100%;
     display: flex;
     align-items: flex-end;

@@ -13,7 +13,7 @@ export default class Landing extends Component {
   }
 
   componentDidMount() {
-    this.buttonTimer = window.setTimeout(this.showButton.bind(this), 1500);
+    this.buttonTimer = window.setTimeout(this.showButton.bind(this), 500);
   }
 
   componentWillUnmount() {
@@ -26,11 +26,6 @@ export default class Landing extends Component {
         <div id='landing'>
           <div id="landing-image-wrapper">
             <div id="landing-image" />
-          </div>
-          <div style={this.titleStyle()}>
-            <h3 style={{ width: 'max-content', margin: '0 auto'}}>
-              Fishman Music
-            </h3>
           </div>
           <div className="button-wrapper flex">
             <FlatButton onClick={this.goTo.bind(this, "/main")}

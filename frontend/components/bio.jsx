@@ -1,10 +1,21 @@
 import React, { Component } from 'react';
 
+import Carousel from 'nuka-carousel';
+
 export default class Bio extends Component {
   render() {
     return (
       <div id='bio'>
-        <img style={{ float: 'right', marginLeft: '25px' }} src="http://www.jqueryscript.net/images/Simplest-Responsive-jQuery-Image-Lightbox-Plugin-simple-lightbox.jpg" />
+        <div style={{ margin: '40px 0' }}>
+        <Carousel>
+          <img src="http://placehold.it/1000x400/ffffff/c0392b/&text=slide1"/>
+          <img src="http://placehold.it/1000x400/ffffff/c0392b/&text=slide2"/>
+          <img src="http://placehold.it/1000x400/ffffff/c0392b/&text=slide3"/>
+          <img src="http://placehold.it/1000x400/ffffff/c0392b/&text=slide4"/>
+          <img src="http://placehold.it/1000x400/ffffff/c0392b/&text=slide5"/>
+          <img src="http://placehold.it/1000x400/ffffff/c0392b/&text=slide6"/>
+        </Carousel>
+        </div>
         <p className="text">
           I won't pretend like anyone else put this bio about me together by
           writing in the 3rd person, and I don't have any press clippings to
