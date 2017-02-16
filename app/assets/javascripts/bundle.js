@@ -29012,6 +29012,10 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
+	var _icons = __webpack_require__(502);
+	
+	var _icons2 = _interopRequireDefault(_icons);
+	
 	var _FlatButton = __webpack_require__(278);
 	
 	var _FlatButton2 = _interopRequireDefault(_FlatButton);
@@ -29069,7 +29073,8 @@
 	          ),
 	          _react2.default.createElement(
 	            'div',
-	            { className: 'button-wrapper flex' },
+	            { className: 'button-wrapper flex column' },
+	            _react2.default.createElement(_icons2.default, { className: 'flex column', style: this.iconStyle() }),
 	            _react2.default.createElement(_FlatButton2.default, { onClick: this.goTo.bind(this, "/main"),
 	              style: this.buttonStyle(),
 	              label: 'Enter' })
@@ -29105,6 +29110,19 @@
 	    key: 'goTo',
 	    value: function goTo(link) {
 	      window.location.href = link;
+	    }
+	  }, {
+	    key: 'iconStyle',
+	    value: function iconStyle() {
+	      if (this.state.showTitle) {
+	        return {};
+	      } else {
+	        return {
+	          opacity: '0',
+	          color: 'white',
+	          transition: 'all 1s ease-in-out'
+	        };
+	      }
 	    }
 	  }, {
 	    key: 'titleStyle',
@@ -45062,7 +45080,7 @@
 	      return _react2.default.createElement(
 	        'div',
 	        { id: 'footer', className: 'flex j-center' },
-	        _react2.default.createElement(_icons2.default, null)
+	        _react2.default.createElement(_icons2.default, { className: 'flex row a-end', style: { margin: '0 30px 0 10px' } })
 	      );
 	    }
 	  }]);
@@ -45077,7 +45095,7 @@
 /* 502 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	"use strict";
 	
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
@@ -45107,20 +45125,21 @@
 	  }
 	
 	  _createClass(Icons, [{
-	    key: 'render',
+	    key: "render",
 	    value: function render() {
 	      return _react2.default.createElement(
-	        'div',
-	        { className: 'flex a-end row', style: { margin: '0 30px 0 10px' } },
-	        _react2.default.createElement('i', { onClick: this.goTo.bind(this, "https://www.facebook.com/dannyfishmanmusic/"), className: 'icon fa fa-facebook-official' }),
-	        _react2.default.createElement('i', { onClick: this.goTo.bind(this, "https://www.youtube.com/channel/UCKEqnVJK5vtEBSXRQu1gzig"), className: 'icon fa fa-youtube' }),
-	        _react2.default.createElement('i', { onClick: this.goTo.bind(this, "https://twitter.com/dannythefishman"), className: 'icon fa fa-twitter' }),
-	        _react2.default.createElement('i', { onClick: this.goTo.bind(this, "https://www.instagram.com/dannyfishmanmusic/"), className: 'icon fa fa-instagram' }),
-	        _react2.default.createElement('i', { onClick: this.goTo.bind(this, "https://soundcloud.com/danny-fishman"), className: 'icon fa fa-soundcloud' })
+	        "div",
+	        { className: this.props.className, style: this.props.style },
+	        _react2.default.createElement("i", { onClick: this.goTo.bind(this, "https://www.facebook.com/dannyfishmanmusic/"), className: "icon fa fa-facebook-official" }),
+	        _react2.default.createElement("i", { onClick: this.goTo.bind(this, "https://www.youtube.com/channel/UCKEqnVJK5vtEBSXRQu1gzig"), className: "icon fa fa-youtube" }),
+	        _react2.default.createElement("i", { onClick: this.goTo.bind(this, "https://twitter.com/dannythefishman"), className: "icon fa fa-twitter" }),
+	        _react2.default.createElement("i", { onClick: this.goTo.bind(this, "https://www.instagram.com/dannyfishmanmusic/"), className: "icon fa fa-instagram" }),
+	        _react2.default.createElement("i", { onClick: this.goTo.bind(this, "https://soundcloud.com/danny-fishman"), className: "icon fa fa-soundcloud" }),
+	        _react2.default.createElement("i", { onClick: this.goTo.bind(this, "https://dannyfishmanmusic.tumblr.com"), className: "icon fa fa-tumblr" })
 	      );
 	    }
 	  }, {
-	    key: 'goTo',
+	    key: "goTo",
 	    value: function goTo(link) {
 	      window.open(link, "_blank");
 	    }
@@ -45130,6 +45149,12 @@
 	}(_react.Component);
 	
 	exports.default = Icons;
+	
+	
+	Icons.propTypes = {
+	  className: _react.PropTypes.string,
+	  style: _react.PropTypes.object
+	};
 
 /***/ },
 /* 503 */

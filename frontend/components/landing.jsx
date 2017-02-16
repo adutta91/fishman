@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Icons from './icons';
 import FlatButton from 'material-ui/FlatButton';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
@@ -27,7 +28,8 @@ export default class Landing extends Component {
           <div id="landing-image-wrapper">
             <div id="landing-image" />
           </div>
-          <div className="button-wrapper flex">
+          <div className="button-wrapper flex column">
+            <Icons className="flex column" style={this.iconStyle()} />
             <FlatButton onClick={this.goTo.bind(this, "/main")}
               style={this.buttonStyle()}
               label="Enter"/>
@@ -60,6 +62,20 @@ export default class Landing extends Component {
 
   goTo(link) {
     window.location.href = link;
+  }
+
+  iconStyle() {
+    if (this.state.showTitle) {
+      return {
+
+      }
+    } else {
+      return {
+        opacity: '0',
+        color: 'white',
+        transition: 'all 1s ease-in-out'
+      }
+    }
   }
 
   titleStyle() {
