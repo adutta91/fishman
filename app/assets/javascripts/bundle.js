@@ -29042,7 +29042,7 @@
 	
 	    _this.state = {
 	      showButton: false,
-	      showTitle: false
+	      showIcons: false
 	    };
 	    return _this;
 	  }
@@ -29051,15 +29051,18 @@
 	    key: 'componentDidMount',
 	    value: function componentDidMount() {
 	      this.buttonTimer = window.setTimeout(this.showButton.bind(this), 500);
+	      this.iconTimer = window.setTimeout(this.showIcons.bind(this), 1000);
 	    }
 	  }, {
 	    key: 'componentWillUnmount',
 	    value: function componentWillUnmount() {
 	      window.clearTimeout(this.buttonTimer);
+	      window.clearTimeout(this.iconTimer);
 	    }
 	  }, {
 	    key: 'render',
 	    value: function render() {
+	      console.log(this.state);
 	      return _react2.default.createElement(
 	        _MuiThemeProvider2.default,
 	        null,
@@ -29075,26 +29078,12 @@
 	            'div',
 	            { className: 'button-wrapper flex column' },
 	            _react2.default.createElement(_icons2.default, { className: 'flex column', style: this.iconStyle() }),
-	            _react2.default.createElement(_FlatButton2.default, { onClick: this.goTo.bind(this, "/main"),
+	            _react2.default.createElement(_FlatButton2.default, { onClick: this.goTo.bind(this, "#"),
 	              style: this.buttonStyle(),
-	              label: 'Enter' })
+	              label: 'Coming Soon' })
 	          )
 	        )
 	      );
-	    }
-	  }, {
-	    key: 'renderButton',
-	    value: function renderButton() {
-	      if (this.state.showButton) {
-	        return _react2.default.createElement(_FlatButton2.default, { onClick: function onClick() {
-	            console.log('hi');
-	          },
-	          style: this.buttonStyle(),
-	          label: 'Enter',
-	          rippleColor: 'blue' });
-	      } else {
-	        return null;
-	      }
 	    }
 	  }, {
 	    key: 'showButton',
@@ -29102,9 +29091,9 @@
 	      this.setState({ showButton: true });
 	    }
 	  }, {
-	    key: 'showTitle',
-	    value: function showTitle() {
-	      this.setState({ showTitle: true });
+	    key: 'showIcons',
+	    value: function showIcons() {
+	      this.setState({ showIcons: true });
 	    }
 	  }, {
 	    key: 'goTo',
@@ -29114,13 +29103,26 @@
 	  }, {
 	    key: 'iconStyle',
 	    value: function iconStyle() {
-	      if (this.state.showTitle) {
-	        return {};
+	      if (this.state.showIcons) {
+	        return {
+	          opacity: '.6',
+	          transition: 'all 1s ease-in-out',
+	          height: '40vh',
+	          transform: 'scale(1.3)',
+	          marginBottom: '10vh',
+	          justifyContent: 'space-around',
+	          alignItems: 'center'
+	        };
 	      } else {
 	        return {
 	          opacity: '0',
-	          color: 'white',
-	          transition: 'all 1s ease-in-out'
+	          transition: 'all 1s ease-in-out',
+	          marginBottom: '10vh',
+	          height: '40vh',
+	          overflow: 'hidden',
+	          transform: 'scale(1.3)',
+	          justifyContent: 'space-around',
+	          alignItems: 'center'
 	        };
 	      }
 	    }

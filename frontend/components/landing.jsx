@@ -9,19 +9,22 @@ export default class Landing extends Component {
     super(props);
     this.state = {
       showButton: false,
-      showTitle: false
+      showIcons: false
     }
   }
 
   componentDidMount() {
     this.buttonTimer = window.setTimeout(this.showButton.bind(this), 500);
+    this.iconTimer = window.setTimeout(this.showIcons.bind(this), 1000);
   }
 
   componentWillUnmount() {
     window.clearTimeout(this.buttonTimer);
+    window.clearTimeout(this.iconTimer);
   }
 
   render() {
+    console.log(this.state);
     return (
       <MuiThemeProvider>
         <div id='landing'>
@@ -30,34 +33,22 @@ export default class Landing extends Component {
           </div>
           <div className="button-wrapper flex column">
             <Icons className="flex column" style={this.iconStyle()} />
-            <FlatButton onClick={this.goTo.bind(this, "/main")}
+            <FlatButton onClick={this.goTo.bind(this, "#")}
               style={this.buttonStyle()}
-              label="Enter"/>
+              label="Coming Soon"/>
           </div>
         </div>
       </MuiThemeProvider>
     )
   }
 
-  renderButton() {
-    if (this.state.showButton) {
-      return (
-        <FlatButton onClick={() => { console.log('hi'); }}
-            style={this.buttonStyle()}
-            label="Enter"
-            rippleColor="blue"/>
-      )
-    } else {
-      return null;
-    }
-  }
 
   showButton() {
     this.setState({ showButton: true });
   }
 
-  showTitle() {
-    this.setState({ showTitle: true });
+  showIcons() {
+    this.setState({ showIcons: true });
   }
 
   goTo(link) {
@@ -65,15 +56,26 @@ export default class Landing extends Component {
   }
 
   iconStyle() {
-    if (this.state.showTitle) {
+    if (this.state.showIcons) {
       return {
-
+        opacity: '.6',
+        transition: 'all 1s ease-in-out',
+        height: '40vh',
+        transform: 'scale(1.3)',
+        marginBottom: '10vh',
+        justifyContent: 'space-around',
+        alignItems: 'center'
       }
     } else {
       return {
         opacity: '0',
-        color: 'white',
-        transition: 'all 1s ease-in-out'
+        transition: 'all 1s ease-in-out',
+        marginBottom: '10vh',
+        height: '40vh',
+        overflow: 'hidden',
+        transform: 'scale(1.3)',
+        justifyContent: 'space-around',
+        alignItems: 'center'
       }
     }
   }
