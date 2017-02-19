@@ -40678,7 +40678,7 @@
 	
 	var _videoList2 = _interopRequireDefault(_videoList);
 	
-	var _data = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"../app/data\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+	var _data = __webpack_require__(511);
 	
 	var _theme = __webpack_require__(495);
 	
@@ -47306,8 +47306,151 @@
 	};
 
 /***/ },
-/* 511 */,
-/* 512 */,
+/* 511 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.tabs = exports.songs = exports.videos = exports.songTracks = undefined;
+	
+	var _react = __webpack_require__(177);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _bio = __webpack_require__(503);
+	
+	var _bio2 = _interopRequireDefault(_bio);
+	
+	var _songIndex = __webpack_require__(512);
+	
+	var _songIndex2 = _interopRequireDefault(_songIndex);
+	
+	var _audioPlayer = __webpack_require__(514);
+	
+	var _audioPlayer2 = _interopRequireDefault(_audioPlayer);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var songTracks = exports.songTracks = [{
+	  title: "Kim (Flying Blind)",
+	  component: _react2.default.createElement(_audioPlayer2.default, { audioSrc: 'http://res.cloudinary.com/dzyfczxnr/video/upload/v1487468933/fishman/AUDIO_-_KIM_FLYING_BLIND_-_1_17_17_9.49_PM.m4a' })
+	}];
+	
+	var videos = exports.videos = [{
+	  src: 'https://www.youtube.com/embed/Us77l6cr7so',
+	  featured: true
+	}, {
+	  src: 'https://www.youtube.com/embed/zp6ftcrVKgc'
+	}, {
+	  src: 'https://www.youtube.com/embed/-Bb3gCpSDko'
+	}, {
+	  src: 'https://www.youtube.com/embed/sh95UqBrJnc'
+	}, {
+	  src: 'https://www.youtube.com/embed/-Bb3gCpSDko'
+	}];
+	
+	var songs = exports.songs = [{
+	  title: 'Descent Into Madness',
+	  src: 'https://www.youtube.com/embed/Us77l6cr7so',
+	  description: ''
+	}, {
+	  title: 'Descent Into Madness',
+	  src: 'https://www.youtube.com/embed/Us77l6cr7so',
+	  description: ''
+	}, {
+	  title: 'Descent Into Madness',
+	  src: 'https://www.youtube.com/embed/Us77l6cr7so',
+	  description: ''
+	}, {
+	  title: 'Descent Into Madness',
+	  src: 'https://www.youtube.com/embed/Us77l6cr7so',
+	  description: ''
+	}, {
+	  title: 'Descent Into Madness',
+	  src: 'https://www.youtube.com/embed/Us77l6cr7so',
+	  description: ''
+	}];
+	
+	var tabs = exports.tabs = {
+	  bio: _react2.default.createElement(_bio2.default, null),
+	  listen: _react2.default.createElement(_songIndex2.default, { songs: songs }),
+	  contact: _react2.default.createElement(_songIndex2.default, { songs: songs })
+	};
+
+/***/ },
+/* 512 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(177);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var SongIndex = function (_Component) {
+	  _inherits(SongIndex, _Component);
+	
+	  function SongIndex() {
+	    _classCallCheck(this, SongIndex);
+	
+	    return _possibleConstructorReturn(this, (SongIndex.__proto__ || Object.getPrototypeOf(SongIndex)).apply(this, arguments));
+	  }
+	
+	  _createClass(SongIndex, [{
+	    key: "componentDidMount",
+	    value: function componentDidMount() {
+	      // SC.initialize({
+	      //   client_id: 'YOUR_CLIENT_ID'
+	      // });
+	      //
+	      // var track_url = 'http://soundcloud.com/forss/flickermood';
+	      // SC.oEmbed(track_url, { auto_play: true }).then(function(oEmbed) {
+	      //   console.log('oEmbed response: ', oEmbed);
+	      // });
+	    }
+	  }, {
+	    key: "render",
+	    value: function render() {
+	      return _react2.default.createElement(
+	        "div",
+	        { className: "flex" },
+	        _react2.default.createElement("iframe", { width: "100%", height: "300", scrolling: "no", frameborder: "no", src: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/88359180&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&visual=true" })
+	      );
+	    }
+	  }]);
+	
+	  return SongIndex;
+	}(_react.Component);
+	
+	exports.default = SongIndex;
+	;
+	
+	SongIndex.propTypes = {
+	  songs: _react.PropTypes.arrayOf(_react.PropTypes.shape({
+	    title: _react.PropTypes.string,
+	    src: _react.PropTypes.string,
+	    description: _react.PropTypes.string
+	  }))
+	};
+
+/***/ },
 /* 513 */
 /***/ function(module, exports, __webpack_require__) {
 
