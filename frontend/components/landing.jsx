@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
 import Icons from './icons';
+import AudioPlayer from './audio-player';
 import FlatButton from 'material-ui/FlatButton';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import theme from '../app/theme';
+
+const muiTheme = getMuiTheme(theme);
 
 export default class Landing extends Component {
 
@@ -24,9 +29,8 @@ export default class Landing extends Component {
   }
 
   render() {
-    console.log(this.state);
     return (
-      <MuiThemeProvider>
+      <MuiThemeProvider muiTheme={muiTheme}>
         <div id='landing'>
           <div id="landing-image-wrapper">
             <div id="landing-image" />

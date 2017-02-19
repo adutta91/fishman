@@ -2,7 +2,11 @@ import React from 'react';
 
 import Bio from '../components/bio';
 import SongIndex from '../components/song-index';
+import AudioPlayer from '../components/audio-player';
 
+export const songs = {
+  "Kim" : <AudioPlayer audioSrc="http://res.cloudinary.com/dzyfczxnr/video/upload/v1487468933/fishman/AUDIO_-_KIM_FLYING_BLIND_-_1_17_17_9.49_PM.m4a" />
+};
 
 export const videos = [
   {

@@ -7,9 +7,8 @@ import Footer from './footer';
 import Bio from './bio';
 import VideoList from './video-list';
 
-import theme from '../app/theme';
-
 import { videos, tabs } from '../app/data';
+import theme from '../app/theme';
 
 const muiTheme = getMuiTheme(theme);
 

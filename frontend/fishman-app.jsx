@@ -19,7 +19,7 @@ const routes = (
       <Route path='/main' component={AppContainer} />
     </Router>
   </Provider>
-)
+);
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.querySelector('#fishman-app-main');
