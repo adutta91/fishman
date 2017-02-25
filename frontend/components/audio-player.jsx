@@ -71,15 +71,6 @@ export default class AudioPlayer extends Component {
               className={`fa ${this.state.playing ? "fa-pause" : "fa-play"} fa-2x`}
               onClick={this.toggle.bind(this)}/>
           </div>
-          <div className='audio-wrapper flex a-center j-center'>
-          <CircularProgress
-          style={this.progressStyle()}
-          mode='determinate'
-          value={this.state.completed} />
-          <i style={{ color: 'white', position: 'relative', right: `${this.state.playing ? '33px' : '29px'}`, cursor: 'pointer' }}
-          className={`fa ${this.state.playing ? "fa-pause" : "fa-play"} fa-2x`}
-          onClick={this.toggle.bind(this)}/>
-          </div>
         </div>
       </MuiThemeProvider>
     )

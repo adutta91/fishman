@@ -47599,17 +47599,6 @@
 	            _react2.default.createElement('i', { style: { color: 'white', position: 'relative', right: '' + (this.state.playing ? '33px' : '29px'), cursor: 'pointer' },
 	              className: 'fa ' + (this.state.playing ? "fa-pause" : "fa-play") + ' fa-2x',
 	              onClick: this.toggle.bind(this) })
-	          ),
-	          _react2.default.createElement(
-	            'div',
-	            { className: 'audio-wrapper flex a-center j-center' },
-	            _react2.default.createElement(_CircularProgress2.default, {
-	              style: this.progressStyle(),
-	              mode: 'determinate',
-	              value: this.state.completed }),
-	            _react2.default.createElement('i', { style: { color: 'white', position: 'relative', right: '' + (this.state.playing ? '33px' : '29px'), cursor: 'pointer' },
-	              className: 'fa ' + (this.state.playing ? "fa-pause" : "fa-play") + ' fa-2x',
-	              onClick: this.toggle.bind(this) })
 	          )
 	        )
 	      );
