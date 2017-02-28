@@ -27,6 +27,20 @@
    color: lightgray;
  }
 
+ .separator {
+   width: 2px;
+   height: 40px;
+   background: white;
+   color: white;
+   margin: 0 10px;
+ }
+
+ .separator::after {
+   content: "";
+   clear: both;
+   margin: auto;
+ }
+
 .flex {
   display: flex;
 }

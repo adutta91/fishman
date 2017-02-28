@@ -38,8 +38,17 @@ export default class Landing extends Component {
           <div className="button-wrapper flex column">
             <Icons className="flex column" style={this.iconStyle()} />
             <FlatButton onClick={this.goTo.bind(this, "#")}
-              style={this.buttonStyle()}
-              label="Coming Soon"/>
+              style={this.buttonStyle('grey')}
+              label="More Soon"/>
+          </div>
+          <div id="button-group" className="flex a-center">
+            <div className="separator" style={this.fadeStyle()}/>
+            <FlatButton onClick={this.goTo.bind(this, "#")}
+              style={this.buttonStyle('white')}
+              label="Listen"/>
+            <FlatButton onClick={this.goTo.bind(this, "#")}
+              style={this.buttonStyle('white')}
+              label="Watch"/>
           </div>
         </div>
       </MuiThemeProvider>
@@ -59,10 +68,23 @@ export default class Landing extends Component {
     window.location.href = link;
   }
 
+  fadeStyle() {
+    if (this.state.showButton) {
+      return  {
+        transition: 'all 1s ease-in-out',
+        opacity: '1'
+      }
+    } else {
+      return {
+        transition: 'all 1s ease-in-out',
+        opacity: '0'
+      }
+    }
+  }
+
   iconStyle() {
     if (this.state.showIcons) {
       return {
-        opacity: '.6',
         transition: 'all 1s ease-in-out',
         height: '40vh',
         transform: 'scale(1.3)',
@@ -105,22 +127,22 @@ export default class Landing extends Component {
     }
   }
 
-  buttonStyle() {
+  buttonStyle(color) {
     if (this.state.showButton) {
       return {
         opacity: '1',
         width: 'max-content',
-        color: 'white',
+        color: color,
         margin: '0 auto',
-        border: '2px solid white',
+        border: `2px solid ${color}`,
         lineHeight: '30px',
         transition: 'all 1s ease-in-out',
       }
     } else {
       return {
         opacity: '0',
-        color: 'white',
-        border: '2px solid white',
+        color: color,
+        border: `2px solid ${color}`,
         margin: '0 auto',
         width: 'max-content',
         lineHeight: '30px',
