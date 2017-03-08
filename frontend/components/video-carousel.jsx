@@ -8,7 +8,7 @@ export default class VideoCarousel extends Component {
 
   iframeStyle() {
     return {
-      marginLeft: '70px'
+      marginLeft: '66px'
     };
   }
 
