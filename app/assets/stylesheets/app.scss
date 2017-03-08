@@ -15,7 +15,40 @@ body {
         width: 100vw;
         height: 100vh;
       }
+    }
 
+    #view {
+      position: fixed;
+      left: calc(5vw + 160px);
+      padding: 0 40px;
+      border-left: 1px solid white;
+      bottom: 20vh;
+      width: 20vw;
+      height: 42vh;
+      transition: all .3s ease-in-out;
+
+      .song {
+        color: white;
+        margin: 10px 0;
+        font-size: 20px;
+        opacity: 0.8;
+        transition: all .3s ease-in-out;
+
+        &:hover {
+          cursor: pointer;
+          margin: 15px 0;
+          font-size: 22px;
+          opacity: 1;
+          transition: all .3s ease-in-out;
+        }
+      }
+    }
+
+    #now-playing {
+      position: fixed;
+      top: 5vh;
+      left: 5vh;
+      color: white;
     }
 
     #button-group {

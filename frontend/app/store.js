@@ -1,13 +1,15 @@
 import { createStore } from 'redux';
 import {
   CONTENT_LOADED,
-  TAB_SELECTED
+  TAB_SELECTED,
+  SONG_PLAYING
 } from './actions'
 
 
 const initialState = {
   loaded: false,
-  activeTab: 'bio'
+  activeTab: 'bio',
+  song: null
 }
 
 const AppReducer = (state = initialState, action) => {
@@ -16,6 +18,9 @@ const AppReducer = (state = initialState, action) => {
       return Object.assign({}, state, { loaded: true });
     case TAB_SELECTED:
       return Object.assign({}, state, { activeTab: action.tab });
+    case SONG_PLAYING:
+      console.log(action.song);
+      return Object.assign({}, state, { song: action.song });
     default:
       return state;
   }

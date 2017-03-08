@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import Icons from './icons';
-import AudioPlayer from './audio-player';
 import FlatButton from 'material-ui/FlatButton';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import theme from '../app/theme';
+
+import AudioPlayer from './audio-player';
+import SongList from './song-list';
 
 const muiTheme = getMuiTheme(theme);
 
@@ -14,7 +16,8 @@ export default class Landing extends Component {
     super(props);
     this.state = {
       showButton: false,
-      showIcons: false
+      showIcons: false,
+      view: null
     }
   }
 
@@ -28,28 +31,65 @@ export default class Landing extends Component {
     window.clearTimeout(this.iconTimer);
   }
 
+  renderView() {
+    if (!this.state.view) return null;
+    if (this.state.view = 'songs') return <SongList song={this.props.song} />
+  }
+
+  setView(view) {
+    if (view == 'videos') return;
+    this.setState({ view });
+  }
+
+  renderNowPlaying() {
+    if (!this.props.song) return null;
+    const song = this.props.song;
+    return (
+      <div className="flex j-between">
+        <div className='flex column j-start a-start'>
+          <em><strong>Now Playing</strong></em>
+          <span className='large'><em><strong>{song.title}</strong></em></span>
+        </div>
+        <AudioPlayer key={song.title} audioSrc={song.src} title={song.title} currSong={song.title} play={true}/>
+      </div>
+    );
+  }
+
   render() {
     return (
       <MuiThemeProvider muiTheme={muiTheme}>
         <div id='landing'>
+
           <div id="landing-image-wrapper">
             <div id="landing-image" />
           </div>
+
+          <div id='now-playing' style={this.nowPlayingStyle()}>
+            { this.renderNowPlaying() }
+          </div>
+
+          <div id='view' style={this.viewStyle()}>
+            {this.renderView() }
+          </div>
+
           <div className="button-wrapper flex column">
             <Icons className="flex column" style={this.iconStyle()} />
             <FlatButton onClick={this.goTo.bind(this, "#")}
               style={this.buttonStyle('grey')}
+              disabled={true}
               label="More Soon"/>
           </div>
+
           <div id="button-group" className="flex a-center">
             <div className="separator" style={this.fadeStyle()}/>
-            <FlatButton onClick={this.goTo.bind(this, "#")}
+            <FlatButton onClick={this.setView.bind(this, "songs")}
               style={this.buttonStyle('white')}
               label="Listen"/>
-            <FlatButton onClick={this.goTo.bind(this, "#")}
-              style={this.buttonStyle('white')}
+            <FlatButton disabled={true} onClick={this.setView.bind(this, "videos")}
+              style={this.buttonStyle('grey')}
               label="Watch"/>
           </div>
+
         </div>
       </MuiThemeProvider>
     )
@@ -66,6 +106,18 @@ export default class Landing extends Component {
 
   goTo(link) {
     window.location.href = link;
+  }
+
+  viewStyle() {
+    if (this.state.view) {
+      return {
+        opacity: 1
+      };
+    } else {
+      return {
+        opacity: 0
+      };
+    }
   }
 
   fadeStyle() {
@@ -106,23 +158,16 @@ export default class Landing extends Component {
     }
   }
 
-  titleStyle() {
-    if (this.state.showTitle) {
+  nowPlayingStyle() {
+    if (this.props.song) {
       return {
-        position: 'fixed',
-        top: '33%',
-        color: 'white',
-        width: '100%',
-        margin: '0 auto',
-        opacity: '1',
-        transition: 'all 1s ease-in-out',
-        textShadow: '2px 2px 10px black'
+        opacity: 1,
+        transition: 'all 3s ease-in-out'
       }
     } else {
       return {
-        opacity: '0',
-        color: 'white',
-        transition: 'all 1s ease-in-out'
+        opacity: 0,
+        transition: 'all .3s ease-in-out'
       }
     }
   }

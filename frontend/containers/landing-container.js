@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import Main from '../components/main';
+import Landing from '../components/landing';
 
 const mapStateToProps = (state, props) => {
   return {
@@ -9,4 +9,4 @@ const mapStateToProps = (state, props) => {
   }
 };
 
-export default connect(mapStateToProps)(Main);
+export default connect(mapStateToProps)(Landing);

@@ -7,7 +7,11 @@ import AudioPlayer from '../components/audio-player';
 export const songTracks = [
   {
     title: "Kim (Flying Blind)",
-    component: <AudioPlayer audioSrc="http://res.cloudinary.com/dzyfczxnr/video/upload/v1487468933/fishman/AUDIO_-_KIM_FLYING_BLIND_-_1_17_17_9.49_PM.m4a" />
+    src: "http://res.cloudinary.com/dzyfczxnr/video/upload/v1487468933/Kim.m4a"
+  },
+  {
+    title: "Honey Won't You Stay",
+    src: "http://res.cloudinary.com/dzyfczxnr/video/upload/v1488865244/honey.mp3"
   }
 ];
 
@@ -30,37 +34,8 @@ export const videos = [
   }
 ];
 
-
-export const songs = [
-  {
-    title: 'Descent Into Madness',
-    src: 'https://www.youtube.com/embed/Us77l6cr7so',
-    description: ''
-  },
-  {
-    title: 'Descent Into Madness',
-    src: 'https://www.youtube.com/embed/Us77l6cr7so',
-    description: ''
-  },
-  {
-    title: 'Descent Into Madness',
-    src: 'https://www.youtube.com/embed/Us77l6cr7so',
-    description: ''
-  },
-  {
-    title: 'Descent Into Madness',
-    src: 'https://www.youtube.com/embed/Us77l6cr7so',
-    description: ''
-  },
-  {
-    title: 'Descent Into Madness',
-    src: 'https://www.youtube.com/embed/Us77l6cr7so',
-    description: ''
-  }
-];
-
 export const tabs = {
   bio: <Bio />,
-  listen: <SongIndex songs={songs}/>,
-  contact: <SongIndex songs={songs}/>
+  // listen: <SongIndex songs={songs}/>,
+  // contact: <SongIndex songs={songs}/>
 };
