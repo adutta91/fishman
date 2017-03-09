@@ -27,6 +27,4 @@ export default class VideoCarousel extends Component {
   }
 };
 
-VideoCarousel.propTypes = {
-
-};
+VideoCarousel.propTypes = {};
