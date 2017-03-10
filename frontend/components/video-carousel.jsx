@@ -14,7 +14,7 @@ export default class VideoCarousel extends Component {
 
   renderVideos() {
     return videos.map((video, idx) => {
-      return <iframe style={this.iframeStyle()} key={idx} width="560" height="315" src={video.src} frameborder="0" allowfullscreen></iframe>
+      return <iframe style={this.iframeStyle()} key={idx} width="560" height="315" src={video.src} frameBorder="0" allowFullScreen></iframe>
     });
   }
 

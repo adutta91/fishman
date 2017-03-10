@@ -34,7 +34,6 @@ export default class Landing extends Component {
 
   renderView() {
     if (!this.state.view) return null;
-    console.log(this.state.view);
     if (this.state.view == 'songs') return <SongList song={this.props.song} />
     else if (this.state.view == 'videos') return <VideoCarousel />
   }
