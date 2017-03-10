@@ -28,9 +28,6 @@ export const videos = [
   },
   {
     src: 'https://www.youtube.com/embed/sh95UqBrJnc'
-  },
-  {
-    src: 'https://www.youtube.com/embed/-Bb3gCpSDko'
   }
 ];
 

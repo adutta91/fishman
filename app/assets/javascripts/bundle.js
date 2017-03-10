@@ -41402,8 +41402,6 @@
 	  src: 'https://www.youtube.com/embed/-Bb3gCpSDko'
 	}, {
 	  src: 'https://www.youtube.com/embed/sh95UqBrJnc'
-	}, {
-	  src: 'https://www.youtube.com/embed/-Bb3gCpSDko'
 	}];
 	
 	var tabs = exports.tabs = {
