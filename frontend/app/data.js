@@ -17,17 +17,12 @@ export const songTracks = [
 
 export const videos = [
   {
-    src: 'https://www.youtube.com/embed/Us77l6cr7so',
-    featured: true
+    src: 'https://www.youtube.com/watch?v=-5y4ykx9V9s',
+    title: "Honey Won't You Stay"
   },
   {
-    src: 'https://www.youtube.com/embed/zp6ftcrVKgc'
-  },
-  {
-    src: 'https://www.youtube.com/embed/-Bb3gCpSDko'
-  },
-  {
-    src: 'https://www.youtube.com/embed/sh95UqBrJnc'
+    src: 'https://www.youtube.com/watch?v=QEgBf6oDh04',
+    title: "Kim (Flying Blind)"
   }
 ];
 
