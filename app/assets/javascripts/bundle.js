@@ -41387,17 +41387,17 @@
 	
 	var songTracks = exports.songTracks = [{
 	  title: "Kim (Flying Blind)",
-	  src: "http://res.cloudinary.com/dzyfczxnr/video/upload/v1487468933/Kim.m4a"
+	  src: "https://www.youtube.com/embed/QEgBf6oDh04"
 	}, {
 	  title: "Honey Won't You Stay",
-	  src: "http://res.cloudinary.com/dzyfczxnr/video/upload/v1488865244/honey.mp3"
+	  src: "https://www.youtube.com/embed/-5y4ykx9V9s"
 	}];
 	
 	var videos = exports.videos = [{
-	  src: 'https://www.youtube.com/watch?v=-5y4ykx9V9s',
+	  src: 'https://www.youtube.com/embed/-5y4ykx9V9s',
 	  title: "Honey Won't You Stay"
 	}, {
-	  src: 'https://www.youtube.com/watch?v=QEgBf6oDh04',
+	  src: 'https://www.youtube.com/embed/QEgBf6oDh04',
 	  title: "Kim (Flying Blind)"
 	}];
 	
@@ -43534,7 +43534,16 @@
 	      var _this2 = this;
 	
 	      return _data.videos.map(function (video, idx) {
-	        return _react2.default.createElement('iframe', { style: _this2.iframeStyle(), key: idx, width: '560', height: '315', src: video.src, frameBorder: '0', allowFullScreen: true });
+	        return _react2.default.createElement(
+	          'div',
+	          null,
+	          _react2.default.createElement('iframe', { style: _this2.iframeStyle(), key: idx, width: '560', height: '315', src: video.src, frameBorder: '0', allowFullScreen: true }),
+	          _react2.default.createElement(
+	            'p',
+	            { className: 'flex j-center', style: { color: 'white', marginTop: '15px' } },
+	            video.title
+	          )
+	        );
 	      });
 	    }
 	  }, {
