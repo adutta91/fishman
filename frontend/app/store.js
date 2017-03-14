@@ -19,7 +19,6 @@ const AppReducer = (state = initialState, action) => {
     case TAB_SELECTED:
       return Object.assign({}, state, { activeTab: action.tab });
     case SONG_PLAYING:
-      console.log(action.song);
       return Object.assign({}, state, { song: action.song });
     default:
       return state;

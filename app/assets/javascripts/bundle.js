@@ -24166,7 +24166,6 @@
 	    case _actions.TAB_SELECTED:
 	      return Object.assign({}, state, { activeTab: action.tab });
 	    case _actions.SONG_PLAYING:
-	      console.log(action.song);
 	      return Object.assign({}, state, { song: action.song });
 	    default:
 	      return state;
@@ -29084,6 +29083,10 @@
 	
 	var _videoCarousel2 = _interopRequireDefault(_videoCarousel);
 	
+	var _contactInfo = __webpack_require__(520);
+	
+	var _contactInfo2 = _interopRequireDefault(_contactInfo);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -29126,7 +29129,16 @@
 	    key: 'renderView',
 	    value: function renderView() {
 	      if (!this.state.view) return null;
-	      if (this.state.view == 'songs') return _react2.default.createElement(_songList2.default, { song: this.props.song });else if (this.state.view == 'videos') return _react2.default.createElement(_videoCarousel2.default, null);
+	      switch (this.state.view) {
+	        case 'songs':
+	          return _react2.default.createElement(_songList2.default, { song: this.props.song });
+	        case 'videos':
+	          return _react2.default.createElement(_videoCarousel2.default, null);
+	        case 'contact':
+	          return _react2.default.createElement(_contactInfo2.default, null);
+	        default:
+	          return null;
+	      }
 	    }
 	  }, {
 	    key: 'setView',
@@ -29212,7 +29224,11 @@
 	              label: 'Listen' }),
 	            _react2.default.createElement(_FlatButton2.default, { onClick: this.setView.bind(this, "videos"),
 	              style: this.buttonStyle('white'),
-	              label: 'Watch' })
+	              label: 'Watch' }),
+	            _react2.default.createElement(_FlatButton2.default, { onClick: this.setView.bind(this, "contact"),
+	              style: this.buttonStyle('gray'),
+	              disabled: true,
+	              label: 'Contact' })
 	          )
 	        )
 	      );
@@ -41387,10 +41403,10 @@
 	
 	var songTracks = exports.songTracks = [{
 	  title: "Kim (Flying Blind)",
-	  src: "https://www.youtube.com/embed/QEgBf6oDh04"
+	  src: "http://res.cloudinary.com/dzyfczxnr/video/upload/v1487468933/fishman/Kim.m4a"
 	}, {
 	  title: "Honey Won't You Stay",
-	  src: "https://www.youtube.com/embed/-5y4ykx9V9s"
+	  src: "http://res.cloudinary.com/dzyfczxnr/video/upload/v1488865244/fishman/honey.mp3"
 	}];
 	
 	var videos = exports.videos = [{
@@ -48211,6 +48227,58 @@
 	};
 	
 	exports.default = (0, _reactRedux.connect)(mapStateToProps)(_main2.default);
+
+/***/ },
+/* 520 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(177);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var ContactInfo = function (_Component) {
+	  _inherits(ContactInfo, _Component);
+	
+	  function ContactInfo() {
+	    _classCallCheck(this, ContactInfo);
+	
+	    return _possibleConstructorReturn(this, (ContactInfo.__proto__ || Object.getPrototypeOf(ContactInfo)).apply(this, arguments));
+	  }
+	
+	  _createClass(ContactInfo, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
+	        { id: 'contact-view' },
+	        'dannyfishman1@gmail.com'
+	      );
+	    }
+	  }]);
+	
+	  return ContactInfo;
+	}(_react.Component);
+	
+	exports.default = ContactInfo;
+	;
+	
+	ContactInfo.propTypes = {};
 
 /***/ }
 /******/ ]);
