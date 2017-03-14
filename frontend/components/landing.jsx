@@ -8,6 +8,7 @@ import theme from '../app/theme';
 import AudioPlayer from './audio-player';
 import SongList from './song-list';
 import VideoCarousel from './video-carousel';
+import ContactInfo from './contact-info';
 
 const muiTheme = getMuiTheme(theme);
 
@@ -34,8 +35,16 @@ export default class Landing extends Component {
 
   renderView() {
     if (!this.state.view) return null;
-    if (this.state.view == 'songs') return <SongList song={this.props.song} />
-    else if (this.state.view == 'videos') return <VideoCarousel />
+    switch(this.state.view) {
+      case 'songs':
+        return (<SongList song={this.props.song} />);
+      case 'videos':
+        return (<VideoCarousel />);
+      case 'contact':
+        return (<ContactInfo />);
+      default:
+        return null;
+    }
   }
 
   setView(view) {
@@ -89,6 +98,10 @@ export default class Landing extends Component {
             <FlatButton onClick={this.setView.bind(this, "videos")}
               style={this.buttonStyle('white')}
               label="Watch"/>
+            <FlatButton onClick={this.setView.bind(this, "contact")}
+              style={this.buttonStyle('gray')}
+              disabled={true}
+              label="Contact"/>
           </div>
 
         </div>

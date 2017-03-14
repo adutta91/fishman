@@ -52,6 +52,14 @@ body {
       height: 415px;
     }
 
+    #contact-view {
+      position: fixed;
+      bottom: 25vh;
+      left: calc(50vw - 350px);
+      width: 700px;
+      height: 415px;
+    }
+
     #now-playing {
       position: fixed;
       top: 5vh;
@@ -63,7 +71,7 @@ body {
       position: fixed;
       bottom: calc(5vh - 2px);
       left: calc(5vw + 130px);
-      width: 250px;
+      width: 350px;
     }
 
     .button-wrapper {
