@@ -7,11 +7,11 @@ import AudioPlayer from '../components/audio-player';
 export const songTracks = [
   {
     title: "Kim (Flying Blind)",
-    src: "https://www.youtube.com/embed/QEgBf6oDh04"
+    src: "http://res.cloudinary.com/dzyfczxnr/video/upload/v1487468933/fishman/Kim.m4a"
   },
   {
     title: "Honey Won't You Stay",
-    src: "https://www.youtube.com/embed/-5y4ykx9V9s"
+    src: "http://res.cloudinary.com/dzyfczxnr/video/upload/v1488865244/fishman/honey.mp3"
   }
 ];
 
