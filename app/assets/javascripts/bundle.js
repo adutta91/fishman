@@ -29228,7 +29228,7 @@
 	            _react2.default.createElement(
 	              'span',
 	              { className: 'contact', style: this.fadeStyle() },
-	              'dannyfishman1@gmail.com'
+	              'danny.fishman1@gmail.com'
 	            )
 	          )
 	        )
