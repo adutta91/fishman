@@ -98,10 +98,11 @@ export default class Landing extends Component {
             <FlatButton onClick={this.setView.bind(this, "videos")}
               style={this.buttonStyle('white')}
               label="Watch"/>
-            <FlatButton onClick={this.setView.bind(this, "contact")}
+            <span className="contact" style={this.fadeStyle()}>dannyfishman1@gmail.com</span>
+            {/* <FlatButton onClick={this.setView.bind(this, "contact")}
               style={this.buttonStyle('gray')}
               disabled={true}
-              label="Contact"/>
+              label="Contact"/> */}
           </div>
 
         </div>

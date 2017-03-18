@@ -29225,10 +29225,11 @@
 	            _react2.default.createElement(_FlatButton2.default, { onClick: this.setView.bind(this, "videos"),
 	              style: this.buttonStyle('white'),
 	              label: 'Watch' }),
-	            _react2.default.createElement(_FlatButton2.default, { onClick: this.setView.bind(this, "contact"),
-	              style: this.buttonStyle('gray'),
-	              disabled: true,
-	              label: 'Contact' })
+	            _react2.default.createElement(
+	              'span',
+	              { className: 'contact', style: this.fadeStyle() },
+	              'dannyfishman1@gmail.com'
+	            )
 	          )
 	        )
 	      );
