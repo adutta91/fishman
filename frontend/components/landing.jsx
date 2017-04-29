@@ -10,6 +10,8 @@ import SongList from './song-list';
 import VideoCarousel from './video-carousel';
 import ContactInfo from './contact-info';
 
+import { data } from '../app/data';
+
 const muiTheme = getMuiTheme(theme);
 
 export default class Landing extends Component {
@@ -98,7 +100,7 @@ export default class Landing extends Component {
             <FlatButton onClick={this.setView.bind(this, "videos")}
               style={this.buttonStyle('white')}
               label="Watch"/>
-            <span className="contact" style={this.fadeStyle()}>danny.fishman1@gmail.com</span>
+            <span className="contact" style={this.fadeStyle()}>{data.email}</span>
             {/* <FlatButton onClick={this.setView.bind(this, "contact")}
               style={this.buttonStyle('gray')}
               disabled={true}

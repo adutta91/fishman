@@ -17,8 +17,12 @@ export const songTracks = [
 
 export const videos = [
   {
-    src: 'https://www.youtube.com/embed/-5y4ykx9V9s',
+    src: 'https://www.youtube.com/embed/OK5j3ds7qkQ',
     title: "Honey Won't You Stay"
+  },
+  {
+    src: 'https://www.youtube.com/embed/ayd0gUK435Y',
+    title: "Shadow of a Man"
   },
   {
     src: 'https://www.youtube.com/embed/QEgBf6oDh04',
@@ -30,4 +34,9 @@ export const tabs = {
   bio: <Bio />,
   // listen: <SongIndex songs={songs}/>,
   // contact: <SongIndex songs={songs}/>
+};
+
+
+export const data = {
+  email : 'dannyfishmanmusic@gmail.com'
 };
