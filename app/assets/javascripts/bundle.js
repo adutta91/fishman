@@ -41405,9 +41405,6 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var songTracks = exports.songTracks = [{
-	  title: "Kim (Flying Blind)",
-	  src: "http://res.cloudinary.com/dzyfczxnr/video/upload/v1487468933/fishman/Kim.m4a"
-	}, {
 	  title: "Honey Won't You Stay",
 	  src: "http://res.cloudinary.com/dzyfczxnr/video/upload/v1488865244/fishman/honey.mp3"
 	}, {
@@ -41424,9 +41421,6 @@
 	}, {
 	  src: 'https://www.youtube.com/embed/ayd0gUK435Y',
 	  title: "Shadow of a Man"
-	}, {
-	  src: 'https://www.youtube.com/embed/QEgBf6oDh04',
-	  title: "Kim (Flying Blind)"
 	}, {
 	  src: 'https://www.youtube.com/embed/P9AFh3b2tTw',
 	  title: "Try Again"
