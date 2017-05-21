@@ -12,6 +12,14 @@ export const songTracks = [
   {
     title: "Honey Won't You Stay",
     src: "http://res.cloudinary.com/dzyfczxnr/video/upload/v1488865244/fishman/honey.mp3"
+  },
+  {
+    title: "Try Again",
+    src: "http://res.cloudinary.com/dzyfczxnr/video/upload/v1495396712/Try%20Again.m4a"
+  },
+  {
+    title: "Shadow of a Man",
+    src: "http://res.cloudinary.com/dzyfczxnr/video/upload/v1495397101/Shadow%20of%20a%20man.m4a"
   }
 ];
 
@@ -27,6 +35,10 @@ export const videos = [
   {
     src: 'https://www.youtube.com/embed/QEgBf6oDh04',
     title: "Kim (Flying Blind)"
+  },
+  {
+    src: 'https://www.youtube.com/embed/P9AFh3b2tTw',
+    title: "Try Again"
   }
 ];
 

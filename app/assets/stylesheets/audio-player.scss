@@ -1,16 +1,17 @@
+@media (min-width: 600px) {
+  #audio-player {
+    color: white;
+    position: relative;
+    top: -10px;
+    margin-left: 30px;
+  }
 
-#audio-player {
-  color: white;
-  position: relative;
-  top: -10px;
-  margin-left: 30px;
-}
+  .audio-player {
 
-.audio-player {
+  }
 
-}
-
-.audio-wrapper {
-  width: 80px;
-  height: 80px;
+  .audio-wrapper {
+    width: 80px;
+    height: 80px;
+  }
 }
