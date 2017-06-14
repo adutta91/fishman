@@ -16,6 +16,10 @@ export const songTracks = [
   {
     title: "Shadow of a Man",
     src: "http://res.cloudinary.com/dzyfczxnr/video/upload/v1495397101/Shadow%20of%20a%20man.m4a"
+  },
+  {
+    title: "Who Do You Love",
+    src: "http://res.cloudinary.com/dzyfczxnr/video/upload/v1497412846/Who%20Do%20You%20Love.m4a"
   }
 ];
 
