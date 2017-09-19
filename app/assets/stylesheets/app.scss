@@ -39,6 +39,32 @@
           }
         }
       }
+      #dates-view {
+        position: fixed;
+        left: calc(5vw + 142px);
+        padding: 0 40px;
+        border-left: 1px solid white;
+        bottom: 20vh;
+        width: 20vw;
+        height: 42vh;
+        transition: all .3s ease-in-out;
+
+        .date {
+          color: white;
+          margin: 10px 0;
+          font-size: 20px;
+          opacity: 0.8;
+          transition: all .3s ease-in-out;
+
+          &:hover {
+            cursor: pointer;
+            margin: 15px 0;
+            font-size: 22px;
+            opacity: 1;
+            transition: all .3s ease-in-out;
+          }
+        }
+      }
 
       #videos-view {
         position: fixed;
@@ -67,7 +93,7 @@
         position: fixed;
         bottom: calc(5vh - 2px);
         left: calc(5vw + 130px);
-        width: 550px;
+        width: 675px;
 
         .contact {
           color: white;

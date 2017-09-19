@@ -9,8 +9,10 @@ import AudioPlayer from './audio-player';
 import SongList from './song-list';
 import VideoCarousel from './video-carousel';
 import ContactInfo from './contact-info';
+import TourDates from './tour-dates';
+import ReactRevolverMenu from 'react-revolver-menu';
 
-import { data } from '../app/data';
+import { data, menuData } from '../app/data';
 
 const muiTheme = getMuiTheme(theme);
 
@@ -36,12 +38,14 @@ export default class Landing extends Component {
   }
 
   renderView() {
-    if (!this.state.view) return null;
     switch(this.state.view) {
       case 'songs':
         return (<SongList song={this.props.song} />);
       case 'videos':
         return (<VideoCarousel />);
+      case 'dates':
+        console.log('hererere');
+        return (<TourDates />);
       case 'contact':
         return (<ContactInfo />);
       default:
@@ -100,6 +104,9 @@ export default class Landing extends Component {
             <FlatButton onClick={this.setView.bind(this, "videos")}
               style={this.buttonStyle('white')}
               label="Watch"/>
+            <FlatButton onClick={this.setView.bind(this, "dates")}
+              style={this.buttonStyle('white')}
+              label="Tour Dates"/>
             <span className="contact" style={this.fadeStyle()}>{data.email}</span>
             {/* <FlatButton onClick={this.setView.bind(this, "contact")}
               style={this.buttonStyle('gray')}
