@@ -5,7 +5,7 @@ import { tourDates } from '../app/data';
 export default class TourDates extends Component {
 
   renderSongs() {
-    if (!tourDates.length) return (<div className="date">Return Soon For Upcoming tours!</div>)
+    if (!tourDates.length) return (<div className="date">Return Soon For Upcoming Dates!</div>)
     return tourDates.map((song, idx) => {
       return (<div key={idx} className="date">date</div>);
     });

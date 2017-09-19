@@ -71431,7 +71431,7 @@
 	      if (!_data.tourDates.length) return _react2.default.createElement(
 	        'div',
 	        { className: 'date' },
-	        'Return Soon For Upcoming tours!'
+	        'Return Soon For Upcoming Dates!'
 	      );
 	      return _data.tourDates.map(function (song, idx) {
 	        return _react2.default.createElement(
