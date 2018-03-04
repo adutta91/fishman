@@ -6,9 +6,7 @@ import AudioPlayer from '../components/audio-player';
 
 export const songTracks = [];
 
-export const tourDates = [
-
-];
+export const tourDates = [];
 
 export const videos = [
   {
