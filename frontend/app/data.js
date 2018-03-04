@@ -8,6 +8,10 @@ export const songTracks = [
   {
     title: "Who Do You Love",
     src: "http://res.cloudinary.com/dzyfczxnr/video/upload/v1497412846/Who%20Do%20You%20Love.m4a"
+  },
+  {
+    title: "Poop Song",
+    src: "place.com"
   }
 ];
 
