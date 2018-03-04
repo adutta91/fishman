@@ -43,9 +43,9 @@ export default class Landing extends Component {
         return (<SongList song={this.props.song} />);
       case 'videos':
         return (<VideoCarousel />);
-      case 'dates':
-        console.log('hererere');
-        return (<TourDates />);
+      // case 'dates':
+      //   console.log('hererere');
+      //   return (<TourDates />);
       case 'contact':
         return (<ContactInfo />);
       default:
@@ -104,9 +104,9 @@ export default class Landing extends Component {
             <FlatButton onClick={this.setView.bind(this, "videos")}
               style={this.buttonStyle('white')}
               label="Watch"/>
-            <FlatButton onClick={this.setView.bind(this, "dates")}
+            {/* <FlatButton onClick={this.setView.bind(this, "dates")}
               style={this.buttonStyle('white')}
-              label="Tour Dates"/>
+              label="Tour Dates"/> */}
             <span className="contact" style={this.fadeStyle()}>{data.email}</span>
             {/* <FlatButton onClick={this.setView.bind(this, "contact")}
               style={this.buttonStyle('gray')}

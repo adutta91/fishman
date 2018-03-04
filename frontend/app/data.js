@@ -4,9 +4,15 @@ import Bio from '../components/bio';
 import SongIndex from '../components/song-index';
 import AudioPlayer from '../components/audio-player';
 
-export const songTracks = [];
+export const songTracks = [
+  // src   : 'res.cloudinary.song-title.com',
+  // title : 'Song Title'
+];
 
-export const tourDates = [];
+export const tourDates = [
+  // src   : 'youtube.embed.url',
+  // title : 'Video Title'
+];
 
 export const videos = [];
 
