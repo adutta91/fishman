@@ -29237,6 +29237,9 @@
 	            _react2.default.createElement(_FlatButton2.default, { onClick: this.setView.bind(this, "videos"),
 	              style: this.buttonStyle('white'),
 	              label: 'Watch' }),
+	            _react2.default.createElement(_FlatButton2.default, { onClick: this.setView.bind(this, "dates"),
+	              style: this.buttonStyle('white'),
+	              label: 'Tour Dates' }),
 	            _react2.default.createElement(
 	              'span',
 	              { className: 'contact', style: this.fadeStyle() },
