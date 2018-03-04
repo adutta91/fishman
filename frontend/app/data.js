@@ -4,16 +4,7 @@ import Bio from '../components/bio';
 import SongIndex from '../components/song-index';
 import AudioPlayer from '../components/audio-player';
 
-export const songTracks = [
-  {
-    title: "Who Do You Love",
-    src: "http://res.cloudinary.com/dzyfczxnr/video/upload/v1497412846/Who%20Do%20You%20Love.m4a"
-  },
-  {
-    title: "Poop Song",
-    src: "place.com"
-  }
-];
+export const songTracks = [];
 
 export const tourDates = [
 
